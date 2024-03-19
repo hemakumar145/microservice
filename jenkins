@@ -3,11 +3,6 @@ pipeline {
 
     stages {
        //parallel {
-        stage('CHECKOUT') {
-            steps {
-                echo 'checkout is successfully completed'
-            }
-            }
         stage('BUILD') {
             steps {
                 echo 'build is successfully completed'
