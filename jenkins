@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+       parallel {
         stage('CHECKOUT') {
             steps {
                 echo 'checkout is successfully completed'
@@ -12,6 +13,7 @@ pipeline {
                 echo 'build is successfully completed'
              }
         }
+      }
         stage('TEST') {
             steps {
                 echo 'test is successfull'
