@@ -1,7 +1,7 @@
 pipeline {
- agent any
+parallel {
+  agent any
     stages {
-      parallel {
         stage('BUILD') {
             steps {
              sh "mvn clean install"
