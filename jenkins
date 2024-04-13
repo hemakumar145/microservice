@@ -1,14 +1,12 @@
 pipeline {
-    agent any
+ agent any
 
     stages {
-       //parallel {
         stage('BUILD') {
             steps {
                 echo 'build is successfully completed'
              }
         }
-      //}
         stage('TEST') {
             steps {
                 echo 'test is successfull'
