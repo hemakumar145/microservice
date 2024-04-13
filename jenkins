@@ -8,10 +8,10 @@ pipeline {
                 echo 'build is successfully completed'
              }
         }
-        stage('TEST') {
-            steps {
-             sh "mvn test"
-                echo 'test is successfull'
+              stage('TEST') {
+                steps {
+                 sh "mvn test"
+                  echo 'test is successfull'
            }
        }
 }
