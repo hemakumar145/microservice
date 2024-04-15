@@ -8,14 +8,16 @@ pipeline {
              }
         }
             stage ('parallel') {
-              parallel {
-                stage('TEST') {
-                  steps {
+             agent any
+               parallel {
+                 stage('TEST') {
+                   steps {
                    sh "mvn test"
                    echo 'test is successfull'
            }
        }
-              stage('DEPLOYMENT') {
+               stage('DEPLOYMENT') {
+                 agent any
                    steps {
                      echo 'DEPLOYMENT IS SUCCESSFULL'
 }
