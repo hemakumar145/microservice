@@ -10,7 +10,7 @@ pipeline {
             stage ('parallel') {
              parallel {
                stage('TEST') {
-                 agent { ['agent-linux'] }
+                 agent { ['linux'] }
                     steps {
                      sh "mvn test"
                      echo 'test is successfull'
