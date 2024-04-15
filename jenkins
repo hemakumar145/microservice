@@ -8,8 +8,8 @@ pipeline {
              }
         }
             stage ('parallel') {
+             parallel {
               agent any
-                parallel {
                   stage('TEST') {
                     steps {
                      sh "mvn test"
