@@ -1,28 +1,20 @@
 pipeline {
-   agent any
-     stages {
-        stage('BUILD') {
-            steps {
-             sh "mvn clean install"
-                echo 'build is successfully completed'
-             }
+  agent any
+    stages {
+         stage ( "BUILD STAGE" ) {
+           steps {
+             sh "mvn clean install" 
+            echo "the build is execuated"
+              }
         }
-            stage ('parallel') {
-             parallel {
-               stage('TEST') {
-                 agent { label 'linux' }
-                    steps {
-                     sh "mvn test"
-                     echo 'test is successfull'
-           }
-       }
-               stage('DEPLOYMENT') {
-                 agent any
-                   steps {
-                     echo 'DEPLOYMENT IS SUCCESSFULL'
+          stage ( 'TEST STAGE' )  {
+            steps {
+              sh "mvn test"
+              echo "the test is execuated"
+        }
+    } 
+  }
 }
-}
-}
-}
-}
-}
+
+
+
