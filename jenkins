@@ -17,7 +17,7 @@ pipeline {
             steps {
              sshagent { label 'Deploy' }
              sh """"
-             ssh scp -rp /root/apache-tomcat-9.0.88/webapps/*.war slave@35.174.172.81:/opt/apache-tomcat-8.5.100/webapps
+             ssh scp -rp target/*.jar slave@35.174.172.81:/opt/apache-tomcat-8.5.100/webapps
              ssh slave@35.174.172.81:/opt/apache-tomcat-8.5.100/bin/shutdown.sh
              ssh slave@35.174.172.81:/opt/apache-tomcat-8.5.100/bin/startup.sh        
               """
