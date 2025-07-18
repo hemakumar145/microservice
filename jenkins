@@ -1,15 +1,17 @@
 pipeline {
   agent any
     stages {
-         stage ( "BUILD STAGE" ) {
+        stage ( "BUILD STAGE" ) {
            steps { 
             echo "the build is execuated"
               }
         }
-          stage ( 'TEST STAGE' )  {
-            steps {
-              echo "the test is execuated"
+        stage ( 'TEST STAGE' )  {
+           steps {
+           echo "the test is execuated"
         }
     } 
+}
+}
 
 
