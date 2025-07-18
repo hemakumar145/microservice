@@ -1,16 +1,27 @@
 pipeline {
   agent any
     stages {
-        stage ( "BUILD STAGE" ) {
-           steps { 
-            echo "the build is execuated"
+        stage (parallel) {
+          parallel {
+            stage ( "BUILD STAGE" ) {
+               steps { 
+              echo "the build is execuated"
               }
         }
-        stage ( 'TEST STAGE' )  {
-           steps {
-           echo "the test is execuated"
+            stage ( 'TEST STAGE' )  {
+             steps {
+            echo "the test is execuated"
         }
     } 
+}
+}
+        stage ( 'Deployment Stage') {
+         steps {
+         echo "the deployment is executed"
+         }
+}
+}
+}
 }
 }
 
